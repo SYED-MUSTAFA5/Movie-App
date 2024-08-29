@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+:root {
+  --primary-color: #22254b;
+  --secondary-color: #373b69;
+  --accent-color: #6c63ff; /* Accent color for borders and highlights */
+  --light-bg: #ffffff;
+  --dark-bg: #1c1c1c;
+  --light-text: #f5f5f5;
+  --shadow-color: rgba(0, 0, 0, 0.2);
+  --highlight-color: #ff5722; /* New highlight color for buttons and accents */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, rgba(34, 37, 75, 0.8), rgba(55, 59, 105, 0.8)), url('https://your-background-image-url.com/background.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  color: var(--light-text);
+  line-height: 1.6;
+}
+
+header {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column; /* Align items vertically */
+  align-items: center; /* Center items horizontally */
+  background-color: var(--secondary-color);
+  box-shadow: 0 4px 6px var(--shadow-color);
+  text-align: center; /* Center text */
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem; /* Adjust the font size as needed */
+  color: var(--light-text);
+  font-weight: 600; /* Semi-bold font weight */
+}
+
+header form {
+  margin-top: 1rem;
+  width: 100%; /* Full width for the form */
+  max-width: 600px; /* Limit form width */
+}
+
+.search {
+  background-color: transparent;
+  border: 2px solid var(--accent-color);
+  border-radius: 50px;
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  color: var(--light-text);
+  transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+  outline: none;
+  width: 100%; /* Full width for the search input */
+}
+
+.search::placeholder {
+  color: #7378c5;
+}
+
+.search:focus {
+  background-color: var(--secondary-color);
+  border-color: var(--light-text);
+  transform: scale(1.05); /* Slightly enlarges on focus */
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2rem; /* Increased padding for better spacing */
+}
+
+.movie {
+  width: 300px;
+  margin: 1rem;
+  background-color: var(--secondary-color);
+  box-shadow: 0 6px 12px var(--shadow-color);
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px; /* More rounded corners */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, filter 0.3s ease-in-out;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.3));
+}
+
+.movie:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px var(--shadow-color);
+  filter: brightness(1.1); /* Slightly brightens the movie card on hover */
+}
+
+.movie img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.movie-info {
+  color: var(--light-text);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem 1rem;
+  letter-spacing: 0.5px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-top: 1px solid var(--highlight-color); /* Subtle border for separation */
+}
+
+.movie-info h3 {
+  margin-top: 0;
+  font-size: 1.2rem;
+}
+
+.movie-info span {
+  background-color: var(--primary-color);
+  padding: 0.25rem 0.5rem;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.movie-info span.green {
+  color: lightgreen;
+}
+
+.movie-info span.orange {
+  color: orange;
+}
+
+.movie-info span.red {
+  color: red;
+}
+
+.overview {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+  color: var(--dark-bg);
+  padding: 2rem;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  max-height: 100%;
+  transform: translateY(101%);
+  overflow-y: auto;
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  box-shadow: 0 -4px 6px var(--shadow-color);
+}
+
+.movie:hover .overview {
+  transform: translateY(0);
+  background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white background */
+}
+
+.overview h3 {
+  margin: 0;
+  font-size: 1.4rem; /* Larger font size for headings */
+  color: var(--primary-color);
+}
+
+.overview p {
+  margin: 1rem 0;
+  line-height: 1.6;
+  color: var(--dark-bg); /* Ensure text is visible */
+}
